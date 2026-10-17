@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Space_Grotesk, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,15 +12,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
-  title: "Ghaith Alkawadri (DevWebeloper) — Web & Systems Engineer",
+  title: "Ghaith Alkawadri (@DevWebeloper) — Systems-to-Pixels Architect",
   description:
-    "Senior Web & Systems Engineer. 10Y low-level DNA, 1,000,000+ Android ROM downloads on XDA, creator of Aura Glass GNOME theme, and architect of enterprise high-traffic platforms (HRF, Oslo Freedom Forum, JAR Capital).",
+    "Interactive 3D & WebGL Portfolio of Ghaith Alkawadri. Senior Web & Systems Engineer: 1M+ Android ROM downloads on XDA, creator of Aura Glass GNOME suite, and architect of high-traffic platforms (HRF, Oslo Freedom Forum, JAR Capital, GT-AI).",
   keywords: [
     "Ghaith Alkawadri",
     "DevWebeloper",
     "Full-Stack Engineer",
     "Senior Frontend Developer",
+    "Creative Technologist",
     "Aura Glass",
     "NovaOS",
     "Human Rights Foundation",
@@ -31,7 +45,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ghaith Alkawadri", url: "https://github.com/DevWebeloper" }],
   openGraph: {
-    title: "Ghaith Alkawadri (DevWebeloper) — Web & Systems Engineer",
+    title: "Ghaith Alkawadri (@DevWebeloper) — Systems-to-Pixels Architect",
     description:
       "I can make it happen. Low-level Android systems hacker turned high-traffic web architect.",
     url: "https://github.com/DevWebeloper",
@@ -41,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ghaith Alkawadri — Web & Systems Engineer",
+    title: "Ghaith Alkawadri — Systems-to-Pixels Architect",
     description:
       "From reverse-engineering GPU libraries & 1M+ downloads on XDA to high-scale enterprise platforms.",
   },
@@ -55,9 +69,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col bg-[#080b11] text-slate-100">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#030508] text-slate-100 selection:bg-cyan-400 selection:text-slate-950">
+        {children}
+      </body>
     </html>
   );
 }

@@ -46,7 +46,8 @@ export const PERSONAL_INFO = {
   availability: "Available for Remote Roles Worldwide",
   github: "https://github.com/DevWebeloper",
   xda: "https://xdaforums.com/t/rom-7-0-novaos-j7prime-g610x-notefe-full-port-stable-bugless.3682256/",
-  email: "ghaith.alkawadri.dev@gmail.com",
+  email: "gheith.sy@gmail.com",
+  phone: "+20 1131124952",
   location: "Remote (Global)",
   rolesTargeted: [
     "Senior Full-Stack Engineer",
@@ -76,9 +77,9 @@ export const CORE_STATS: StatItem[] = [
     iconName: "Code2",
   },
   {
-    value: "8 Live",
+    value: "9 Live",
     label: "Client Deployments",
-    sublabel: "From Swiss banking to global NGOs & AI platforms",
+    sublabel: "From Swiss banking & French healthcare to global NGOs & AI",
     iconName: "Globe",
   },
 ];
@@ -190,26 +191,26 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "aura-glass",
-    title: "Aura Glass GNOME Theme",
+    title: "Aura Glass Desktop Suite",
     category: "desktop",
     categoryLabel: "Open Source / Desktop UI",
-    role: "Creator & Lead Designer",
-    tagline: "A frosted-glass GNOME theme (GTK4 + libadwaita) for GNOME Shell 48–50.",
+    role: "Creator & Maintainer",
+    tagline: "Frosted-glass GNOME Shell 48–51 environment, Shell extension, D-Bus bridge & GTK4/libadwaita settings app.",
     description:
-      "Applied 8 years of web UI/UX intuition to the Linux desktop, delivering an ultra-modern frosted glass aesthetic with one-script zero-root installation across Arch, Fedora, Ubuntu, and CachyOS.",
+      "A complete frosted-glass desktop suite for GNOME Shell 48–51 unifying GTK3, GTK4, libadwaita, and Shell stylesheets with a first-party GNOME Shell extension, D-Bus bridge, and native GTK4 settings app.",
     deepDive: {
       challenge:
-        "Linux desktop theming is notoriously fragmented between GTK3, GTK4, libadwaita, and GNOME Shell styling, often resulting in broken borders, misaligned blur, and unreadable contrast.",
+        "Linux desktop theming is fragmented across GNOME Shell, GTK3, GTK4, and libadwaita. Standard themes break window shadows, hard-code accent colors, and require re-running shell scripts to adjust blur or opacity.",
       architecture:
-        "Engineered unified CSS stylesheets that harmoniously blend with Blur my Shell and system widgets. Wrote an automated shell installer that safely provisions themes without root permissions, accommodating desktop updates seamlessly.",
+        "Built a modular desktop suite in user-space ($HOME): patched Blur My Shell v73 (overview, sub-windows, notification blur) and Custom OSD for GNOME 50/51, wrote the Aura Glass Helper GNOME Shell extension ('Blur This App' window menu + adaptive performance toggle), and connected it via a D-Bus bridge to a native GTK4 + libadwaita settings GUI.",
       keyAchievements: [
-        "Created one of the sleekest frosted-glass aesthetics for modern GNOME Shell (48-50).",
-        "Zero-root shell installation script with cross-distro support (Arch, Fedora, Ubuntu, CachyOS).",
-        "Demonstrated mastery of CSS specificity, GPU blur blending, and desktop design systems.",
+        "Engineered a first-party GNOME Shell extension with a D-Bus bridge to a native GTK4/libadwaita settings GUI.",
+        "Shipped 3 custom Blur My Shell v73 patches and dynamic GNOME accent color splicing across GTK3/GTK4.",
+        "Zero-root user-space installer & clean uninstaller supporting Arch, Fedora, Ubuntu, and CachyOS.",
       ],
     },
-    metrics: "GNOME Shell 48–50 • One-Script No-Root",
-    techStack: ["GTK4", "libadwaita", "GNOME Shell CSS", "Bash", "Linux Desktop Architecture"],
+    metrics: "GNOME Shell 48–51 • Extension + GTK4 GUI",
+    techStack: ["GTK4", "libadwaita", "GNOME Shell Extension", "D-Bus", "CSS", "Bash"],
     githubUrl: "https://github.com/DevWebeloper/aura-glass",
     featured: true,
     badge: "Open Source Showcase",
@@ -222,21 +223,20 @@ export const PROJECTS: Project[] = [
     role: "Lead Systems Developer / XDA Recognized",
     tagline: "Full Android 7.0 Note Fan Edition port to Galaxy J7 Prime & Xiaomi Perseus trees.",
     description:
-      "10 years ago, revolutionized budget device performance by reverse-engineering GPU libraries to achieve real-time blur and fluid UI on resource-constrained hardware, scaling to 1M+ downloads.",
+      "Ported full Samsung Note Fan Edition firmware to budget hardware and maintained Xiaomi Mi MIX 3 (perseus) device trees, patching Mali GPU libraries for 60fps hardware blur and reaching 1M+ downloads.",
     deepDive: {
       challenge:
-        "The Galaxy J7 Prime was a budget smartphone with weak hardware, missing camera vendor blobs, and disabled UI effects. Porting Samsung's flagship NoteFE Nougat required resolving incompatible hardware abstraction layers (HAL), audio routing, and severe GPU throttling.",
+        "The Galaxy J7 Prime (G610X) was a budget handset with disabled compositor blur, incompatible camera vendor blobs, and Exynos audio routing differences compared to the flagship Note Fan Edition.",
       architecture:
-        "Reverse-engineered proprietary GPU libraries to force real-time blur and hardware acceleration. Developed an innovative cross-porting abstraction methodology that allowed porting to devices without physically owning them by deeply understanding SoC registers, kernel headers, and binder IPC.",
+        "Patched proprietary Mali GPU libraries to unlock hardware-accelerated real-time blur in SurfaceFlinger without frame drops. Resolved camera HAL and audio routing tables, and developed a register/header mapping workflow to cross-port ROM builds across 12 device variants without owning the physical hardware.",
       keyAchievements: [
-        "Surpassed 1,000,000+ total downloads across all versions and 12 supported devices.",
-        "Built and led a 15,000+ member Telegram developer community.",
-        "Achieved 100% bugless and stable performance on budget devices through low-level reverse engineering.",
-        "Still actively debugging and fixing custom ROM bugs for the open-source community a decade later.",
+        "Surpassed 1,000,000+ cumulative downloads across 12 supported device variants.",
+        "Built and supported a 15,000+ member Telegram developer and user community.",
+        "Maintained Xiaomi Mi MIX 3 (device_xiaomi_perseus) device trees and kernel configurations.",
       ],
     },
-    metrics: "1,000,000+ Downloads • 15K Telegram Community",
-    techStack: ["Android HAL", "C / C++", "Kernel Patching", "GPU Lib Reverse Engineering", "ARM Assembly", "Bash"],
+    metrics: "1,000,000+ Downloads • 15K Community",
+    techStack: ["Android AOSP / HAL", "C / C++", "Kernel Patching", "GPU Binary Patching", "Device Trees", "Bash"],
     xdaUrl: "https://xdaforums.com/t/rom-7-0-novaos-j7prime-g610x-notefe-full-port-stable-bugless.3682256/",
     githubUrl: "https://github.com/DevWebeloper/device_xiaomi_perseus",
     featured: true,
@@ -250,15 +250,15 @@ export const PROJECTS: Project[] = [
     role: "Frontend & WordPress Engineer",
     tagline: "Leading Parisian workspace & designer furniture brand interactive showcase.",
     description:
-      "Highly customized WordPress platform with bespoke PHP, CSS, and JavaScript powering an elegant catalog of architectural furniture and workspace designs.",
+      "Customized WordPress platform with bespoke PHP templates, CSS/Sass, and JavaScript powering an architectural furniture catalog and workspace showcase.",
     deepDive: {
       challenge:
-        "Displaying high-resolution designer furniture collections without degrading mobile speed or page responsiveness.",
+        "Displaying high-resolution designer furniture collections and material variants without degrading mobile load speeds or layout stability.",
       architecture:
-        "Customized WordPress core templates with optimized image delivery, fluid CSS layouts, and bespoke filtering logic tailored to French corporate interior designers.",
+        "Built custom WordPress PHP templates with optimized image delivery, responsive CSS/Sass layouts, and catalog filtering tailored to corporate interior designers.",
       keyAchievements: [
-        "High-performance media catalog with smooth transition animations.",
-        "Custom PHP template structures tailored to furniture collections and material variants.",
+        "Fast, responsive media catalog with custom filtering for collections and finishes.",
+        "Clean PHP template hierarchy built for straightforward client content updates.",
       ],
     },
     techStack: ["WordPress", "Custom PHP", "CSS3 / Sass", "JavaScript", "Responsive Design"],
@@ -271,44 +271,44 @@ export const PROJECTS: Project[] = [
     category: "desktop",
     categoryLabel: "Desktop Networking & Python",
     role: "Creator",
-    tagline: "GTK4 app routing Syncplay and mpv through a remote machine over SSH with verified egress.",
+    tagline: "Fail-closed GTK4 app routing Syncplay and mpv over SSH/Tailscale with an HTTP CONNECT-to-SOCKS5 bridge.",
     description:
-      "Built a seamless, plug-and-play desktop application for non-technical friends and family to watch movies remotely with synchronized pause/unpause and verified SSH egress.",
+      "A fail-closed GTK4 desktop app that routes Syncplay and mpv through a remote SSH host over Tailscale, fixing FFmpeg's SOCKS5 proxy bypass leak and verifying exit IP before playback starts.",
     deepDive: {
       challenge:
-        "Remote synchronized video watching typically requires complex network setups, port forwarding, or unreliable third-party servers.",
+        "Passing --http-proxy=socks5://... to mpv fails silently for video streams because mpv hands the flag to FFmpeg, which only speaks HTTP CONNECT and ignores socks5:// URLs—causing yt-dlp to resolve over the tunnel while FFmpeg streams video directly from the client's real IP.",
       architecture:
-        "Built a clean GTK4 desktop interface in Python. Integrates with mpv IPC and Syncplay, automatically creating an SSH tunnel and cryptographically verifying egress routing before video playback begins.",
+        "Wrote a local HTTP CONNECT proxy in Python that bridges FFmpeg traffic into the SSH SOCKS5 tunnel over Tailscale. Built a GTK4 interface that scans native and Distrobox containers for Syncplay/mpv, resolves episodes onto the shared playlist, verifies the remote egress IP before starting playback, and terminates playback immediately if the tunnel drops.",
       keyAchievements: [
-        "Turned complex SSH tunneling into a one-click friendly interface for non-technical users.",
-        "Verified network egress security prior to any media transmission.",
-        "Real-time synchronized playback and pause state across global connections.",
+        "Fixed mpv/FFmpeg's silent socks5:// direct-IP leak via a local HTTP CONNECT-to-SOCKS5 proxy bridge.",
+        "Implemented fail-closed egress verification that kills playback if the SSH tunnel drops.",
+        "Auto-detects native and Distrobox Syncplay/mpv installations and syncs resolved playlists.",
       ],
     },
-    techStack: ["Python", "GTK4", "SSH Tunneling", "mpv IPC", "Linux Networking"],
+    techStack: ["Python", "GTK4", "SSH / SOCKS5", "HTTP CONNECT Proxy", "mpv / FFmpeg", "Tailscale"],
     githubUrl: "https://github.com/DevWebeloper/syncplay-tunnel",
     badge: "Network Utility",
   },
   {
     id: "alienfx-linux",
-    title: "AlienFX Linux SDK",
+    title: "AlienFX-Linux SDK & CLI",
     category: "systems",
     categoryLabel: "Hardware Control & Linux SDK",
     role: "Creator & Maintainer",
-    tagline: "Alienware systems RGB lighting and fan control SDK for Linux.",
+    tagline: "Linux C/C++ SDK and CLI for Dell G-Series & Alienware USB HID RGB lighting and ACPI fan control.",
     description:
-      "Created an open-source driver and control utility for Alienware hardware on Linux because official Alienware Command Center software was exclusively available on Windows.",
+      "Ported the AlienFX and AlienFan SDKs and CLI (alienfx-cli) to Linux, providing direct USB HID and ACPI hardware control for Alienware and Dell G-Series systems (2010–2025).",
     deepDive: {
       challenge:
-        "Dell Alienware hardware uses proprietary USB/ACPI control signals for zonal RGB lighting and fan profiles that were completely non-functional on Linux distributions.",
+        "Dell and Alienware ELC/Darfon hardware controllers rely on proprietary USB HID report packets (API v1–v8) and ACPI calls for zonal/per-key RGB lighting and fan curves, with official tooling restricted to Windows.",
       architecture:
-        "Interfaced with Linux sysfs and USB controller protocols to provide a clean CLI and SDK for customizing thermal profiles and RGB zones on Alienware laptops and desktops.",
+        "Built a CMake/Ninja C/C++ static library (AlienFX-SDK) and CLI (alienfx-cli) that communicates directly with USB HID report/feature endpoints (9-byte to 65-byte protocols across APIv1–v8) and AlienFan ACPI interfaces with minimal RAM footprint.",
       keyAchievements: [
-        "Enabled native hardware control for Alienware Linux users without Windows emulation.",
-        "Reverse-engineered lighting zone USB packets and fan speed thresholds.",
+        "Direct hardware USB HID control supporting Alienware/Dell notebooks, desktops, keyboards, mice, and monitors (API v1–v8).",
+        "Zero background bloat: tiny C/C++ static library and terminal CLI built with CMake and Ninja.",
       ],
     },
-    techStack: ["C / Python", "Linux Kernel sysfs", "USB Protocol Analysis", "Hardware SDK"],
+    techStack: ["C / C++", "CMake / Ninja", "USB HID Protocols", "ACPI / Fan Control", "Linux CLI"],
     githubUrl: "https://github.com/DevWebeloper/alienfx-linux",
     badge: "Hardware & Kernel",
   },
@@ -352,6 +352,32 @@ export const PROJECTS: Project[] = [
     techStack: ["WordPress", "PHP", "Interactive CSS"],
     liveUrl: "https://iphstudios.com/",
     badge: "Creative Studio",
+  },
+  {
+    id: "depistage-cancers",
+    title: "CRCDC Pays de la Loire (Dépistage Cancers)",
+    category: "web",
+    categoryLabel: "Public Health & Healthcare",
+    role: "Independent Full-Stack & WordPress Engineer",
+    tagline: "French Regional Center for Cancer Screening Coordination public health portal.",
+    description:
+      "Engineered and customized a regional French public health platform promoting national organized cancer screening programs across Pays de la Loire with custom PHP shortcodes, dynamic content models, and booking workflows.",
+    deepDive: {
+      challenge:
+        "Delivering an accessible, trustworthy, and easy-to-navigate public health portal for diverse demographics and healthcare practitioners across western France.",
+      architecture:
+        "Developed custom WordPress PHP shortcodes, dynamic JetEngine data structures, and integrated appointment/screening workflows with strict French GDPR (Axeptio) compliance and SEO schema optimization.",
+      keyAchievements: [
+        "Engineered custom header modules, interactive multi-tab screening guides, and regional health directories.",
+        "Optimized Core Web Vitals, accessibility contrast, and mobile responsiveness for public health outreach.",
+        "Implemented structured GovernmentOrganization JSON-LD schema and GDPR-compliant analytics.",
+      ],
+    },
+    metrics: "French Regional Healthcare Portal",
+    techStack: ["WordPress", "Custom PHP Shortcodes", "JetEngine", "JavaScript", "GDPR / Accessibility"],
+    liveUrl: "https://depistagecancers.fr/",
+    featured: true,
+    badge: "Public Health (France)",
   },
   {
     id: "tania-production",
@@ -429,7 +455,7 @@ export const TIMELINE: CareerMilestone[] = [
     title: "High-Traffic Enterprise & Client Engineering",
     subtitle: "High-Profile NGOs, Swiss Wealth & Media Houses",
     description:
-      "Transitioned metal-level optimization instincts to the web. Engineered custom PHP architectures and bespoke themes for international clients including Human Rights Foundation (HRF), Oslo Freedom Forum, JAR Capital in Geneva, and Cider in Paris.",
+      "Transitioned metal-level optimization instincts to the web. Engineered custom PHP architectures and bespoke themes for international clients including Human Rights Foundation (HRF), Oslo Freedom Forum, JAR Capital in Geneva, CRCDC Pays de la Loire, and Cider in Paris.",
     tags: ["High-Traffic Web", "Custom PHP", "WordPress CMS", "Fintech Compliance", "Client Strategy"],
     icon: "Globe",
   },
@@ -443,3 +469,142 @@ export const TIMELINE: CareerMilestone[] = [
     icon: "Layers",
   },
 ];
+
+export interface CVRole {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  type: string;
+  summary: string;
+  highlights: {
+    project: string;
+    url?: string;
+    badge: string;
+    description: string;
+    stack: string[];
+  }[];
+}
+
+export const CV_META = {
+  title: "Senior Full-Stack Web & Systems Engineer",
+  subtitle: "React • Next.js • TypeScript • Custom PHP / WordPress Architecture • Generative AI • Linux Systems",
+  languages: [
+    { name: "English", proficiency: "Full Professional Proficiency" },
+    { name: "Arabic", proficiency: "Native / Bilingual Proficiency" },
+  ],
+  education: {
+    headline: "10+ Years Self-Taught Systems & Full-Stack Engineering Mastery",
+    details:
+      "Deep practical foundation rooted in low-level Linux/Android kernel engineering, binary reverse-engineering, and 8+ years of production full-stack web architecture across enterprise NGOs, Swiss private wealth, healthcare, and AI platforms.",
+  },
+};
+
+export const CV_EXPERIENCE: CVRole[] = [
+  {
+    company: "XonBoard",
+    role: "Senior Full-Stack Web Engineer & Technical Lead",
+    period: "2019 – Present",
+    location: "Remote (International Clients: US, Switzerland, Europe, MENA)",
+    type: "Agency / Enterprise Engineering",
+    summary:
+      "Architected and delivered mission-critical web platforms, custom CMS backends, bespoke zero-bloat PHP themes, and AI voice applications for global non-profits, Swiss financial institutions, cloud providers, and creative studios.",
+    highlights: [
+      {
+        project: "Human Rights Foundation (HRF) & Oslo Freedom Forum",
+        url: "https://hrf.org/",
+        badge: "Global NGO & Flagship Summit",
+        description:
+          "Engineered the primary web platforms for HRF (hrf.org) and Oslo Freedom Forum (oslofreedomforum.com) using heavily customized WordPress PHP and vanilla ES6+ JavaScript. Built zero-bloat modular templates, multi-tier caching, live summit streaming hubs, and interactive speaker schedules capable of sustaining massive global geopolitical traffic spikes.",
+        stack: ["Custom PHP", "WordPress Architecture", "JavaScript (ES6+)", "High-Traffic Caching", "Security Hardening"],
+      },
+      {
+        project: "GT-AI Voice Intelligence Platform",
+        url: "https://gt-ai.io/",
+        badge: "Generative AI & Custom CMS",
+        description:
+          "Designed and built a proprietary full-stack CMS from scratch combining a custom PHP REST backend with a reactive Angular frontend. Integrated ElevenLabs generative voice synthesis APIs with low-latency audio streaming and dynamic parameter controls.",
+        stack: ["Angular", "Custom PHP CMS", "ElevenLabs AI API", "REST APIs", "Audio Streaming", "Tailwind CSS"],
+      },
+      {
+        project: "JAR Capital (Geneva)",
+        url: "https://jarcapital.swiss/geneva/",
+        badge: "Swiss Private Wealth & Fintech",
+        description:
+          "Hand-crafted a 100% bespoke, from-scratch PHP theme on WordPress CMS for a Geneva private banking and wealth management institution. Achieved near-instantaneous load speeds, pixel-perfect Swiss typographic precision, and a tailored editorial backend for financial partners.",
+        stack: ["Bespoke PHP Theme", "WordPress CMS", "Modern CSS", "Performance Engineering", "Swiss Compliance"],
+      },
+      {
+        project: "OmniClouds, IPH Studios & Tania Production",
+        url: "https://www.omniclouds.com/",
+        badge: "Telecom & Creative Media",
+        description:
+          "Delivered lean, cost-optimized enterprise and media platforms for OmniClouds (Global Cloud/SASE & SD-WAN provider), IPH Studios (creative agency), and Tania Production (commercial film showreels) with zero-CLS video delivery and custom PHP templates.",
+        stack: ["WordPress", "Custom PHP", "Fluid CSS", "Media & Video Optimization", "Technical SEO"],
+      },
+    ],
+  },
+  {
+    company: "Independent Full-Stack Consultant & Open-Source Author",
+    role: "Senior Full-Stack & Linux Systems Engineer",
+    period: "2018 – Present",
+    location: "Remote (France, Europe & Global)",
+    type: "Freelance Consulting & Open Source",
+    summary:
+      "Partnered directly with European healthcare institutions and design brands to deliver custom web platforms, while authoring open-source Linux desktop themes, network tunneling GUI tools, and hardware control SDKs.",
+    highlights: [
+      {
+        project: "CRCDC Pays de la Loire (Dépistage Cancers)",
+        url: "https://depistagecancers.fr/",
+        badge: "French Public Health Portal",
+        description:
+          "Engineered custom PHP shortcodes, dynamic JetEngine data structures, and interactive public health screening pathways for the Regional Center for Cancer Screening Coordination in Pays de la Loire, France, ensuring strict GDPR compliance and accessibility.",
+        stack: ["WordPress", "Custom PHP", "JetEngine", "JavaScript", "GDPR & Accessibility"],
+      },
+      {
+        project: "Cider Mobilier de Bureau (Paris)",
+        url: "https://www.cider.fr/",
+        badge: "Parisian Architectural Design",
+        description:
+          "Built customized WordPress/PHP catalog templates, responsive CSS3/Sass layouts, and high-resolution media filtering for a leading Parisian corporate furniture and workspace design studio.",
+        stack: ["Custom PHP", "WordPress", "CSS3 / Sass", "JavaScript", "Catalog Optimization"],
+      },
+      {
+        project: "Aura Glass GNOME Theme (GTK4 + libadwaita)",
+        url: "https://github.com/DevWebeloper/aura-glass",
+        badge: "Open Source • GNOME 48–50",
+        description:
+          "Created a frosted-glass Linux desktop design system unifying GTK3, GTK4, libadwaita, and GNOME Shell 48–50 stylesheets with a zero-root cross-distro Bash installer supporting Arch, Fedora, Ubuntu, and CachyOS.",
+        stack: ["GTK4", "libadwaita", "GNOME Shell CSS", "Bash", "Design Systems"],
+      },
+      {
+        project: "Syncplay Tunnel & AlienFX Linux SDK",
+        url: "https://github.com/DevWebeloper/syncplay-tunnel",
+        badge: "Linux Networking & Hardware SDK",
+        description:
+          "Built Syncplay Tunnel (Python + GTK4 app automating SSH tunnels, mpv IPC, and cryptographic egress verification for synchronized media playback) and AlienFX Linux SDK (reverse-engineered USB/ACPI packets and Linux sysfs for native Alienware RGB & thermal fan control).",
+        stack: ["Python", "C", "GTK4", "SSH Tunneling", "Linux sysfs", "USB Protocol Reverse-Eng"],
+      },
+    ],
+  },
+  {
+    company: "XDA Developers Community (NovaOS Project)",
+    role: "Lead Android Systems Developer & Recognized ROM Porter",
+    period: "2016 – 2018 (10-Year Ongoing Tinkering)",
+    location: "Global Open-Source Community",
+    type: "Low-Level Systems & OS Engineering",
+    summary:
+      "Pioneered full flagship Android OS ports and GPU driver reverse-engineering for resource-constrained smartphones, scaling distribution to over 1,000,000+ downloads and leading a 15,000+ member developer community.",
+    highlights: [
+      {
+        project: "NovaOS & Samsung NoteFE Full Port (1,000,000+ Downloads)",
+        url: "https://xdaforums.com/t/rom-7-0-novaos-j7prime-g610x-notefe-full-port-stable-bugless.3682256/",
+        badge: "1M+ Users • 15K Community",
+        description:
+          "Extracted, decompiled, and ported Samsung Note Fan Edition (Android 7.0) and Xiaomi Perseus device trees across 12+ devices. Reverse-engineered Mali GPU libraries to unlock 60fps real-time hardware blur on budget SoCs, fixed native camera HAL and Exynos audio routing, and developed a 'device-less' blind porting methodology.",
+        stack: ["Android HAL", "C / C++", "Linux Kernel Patching", "GPU Binary Reverse-Eng", "Device Trees"],
+      },
+    ],
+  },
+];
+

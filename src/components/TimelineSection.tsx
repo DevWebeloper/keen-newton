@@ -1,61 +1,69 @@
 "use client";
 
 import React from "react";
-import { Layers, Smartphone, Globe, Sparkles } from "lucide-react";
+import { Layers } from "lucide-react";
 import { TIMELINE } from "@/data/portfolioData";
 
 export const TimelineSection: React.FC = () => {
   return (
-    <section id="journey" className="py-20 relative">
+    <section id="journey" className="py-24 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono mb-3">
-            <Layers className="w-3.5 h-3.5" />
-            <span>The 10-Year Evolution</span>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 border-b border-white/15 pb-8">
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-600/15 border border-rose-500/40 text-rose-400 text-xs font-mono uppercase tracking-widest">
+              <Layers className="w-3.5 h-3.5" />
+              <span>[SEC-06 // CHRONOLOGICAL FIELD LOGS]</span>
+            </div>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-[0.06em] text-white leading-[1.02]">
+              A DECADE OF{" "}
+              <span className="font-serif-editorial italic font-normal lowercase tracking-normal text-amber-400">
+                relentless
+              </span>{" "}
+              OPERATIONS.
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-            From Kernel Tinkering to High-Impact Web
-          </h2>
-          <p className="text-slate-300 text-base mt-3">
-            How a decade of continuous engineering formed a unique systems-to-pixels perspective.
+          <p className="text-zinc-300 text-sm sm:text-base max-w-md font-mono">
+            2016 – 2026 // Ten years of continuous progression from mobile GPU binary reverse-engineering to enterprise web &amp; Linux desktop architecture.
           </p>
         </div>
 
-        <div className="relative border-l border-white/10 ml-4 md:ml-32 space-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 relative">
           {TIMELINE.map((item, idx) => (
-            <div key={idx} className="relative pl-8 md:pl-12 group">
-              {/* Timeline Node Point */}
-              <div className="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-cyan-400 flex items-center justify-center text-cyan-400 group-hover:scale-125 group-hover:border-emerald-400 transition-all">
-                <span className="w-2 h-2 rounded-full bg-cyan-400 group-hover:bg-emerald-400 transition-colors" />
-              </div>
+            <div
+              key={idx}
+              data-cursor={`LOG 0${idx + 1}`}
+              className="glass-panel-interactive brutal-frame p-7 flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/15">
+                  <span className="px-3 py-1 bg-rose-600 text-white text-xs font-mono font-bold uppercase tracking-widest">
+                    {item.period}
+                  </span>
+                  <span className="font-display text-3xl font-bold text-white/15 group-hover:text-amber-400/50 transition-colors">
+                    0{idx + 1}
+                  </span>
+                </div>
 
-              {/* Time pill */}
-              <div className="text-xs font-mono text-cyan-400 mb-1">
-                {item.period}
-              </div>
-
-              {/* Card */}
-              <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 group-hover:border-white/25 transition-all">
-                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <h3 className="font-display text-2xl font-bold uppercase tracking-wide text-white group-hover:text-amber-400 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-sm font-semibold text-emerald-300 mt-1">
+                <p className="text-xs font-mono uppercase tracking-wider text-rose-400 mt-1.5 font-bold">
                   {item.subtitle}
                 </p>
-                <p className="text-sm text-slate-300 mt-3 leading-relaxed">
+                <p className="text-sm text-zinc-300 mt-4 leading-relaxed">
                   {item.description}
                 </p>
+              </div>
 
-                <div className="mt-4 pt-4 border-t border-white/10 flex flex-wrap gap-2">
-                  {item.tags.map((tag, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-slate-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+              <div className="mt-6 pt-4 border-t border-white/15 flex flex-wrap gap-1.5">
+                {item.tags.map((tag, tIdx) => (
+                  <span
+                    key={tIdx}
+                    className="px-2.5 py-1 bg-black/60 border border-white/15 text-[10px] font-mono uppercase tracking-wider text-zinc-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           ))}

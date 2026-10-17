@@ -3,13 +3,15 @@
 @layer base {
   :root {
     --glass-blur: 16px;
-    --glass-opacity: 0.05;
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-surface: rgba(15, 23, 42, 0.6);
-    --accent-cyan: #38bdf8;
-    --accent-emerald: #10b981;
-    --accent-purple: #c084fc;
-    --bg-dark: #080b11;
+    --glass-saturation: 140%;
+    --flashlight-x: 50vw;
+    --flashlight-y: 50vh;
+    --flashlight-radius: 520px;
+    --reality-accent: #e11d48; /* Crimson Resonance */
+    --reality-secondary: #f59e0b; /* Sodium Vapor Amber */
+    --bg-monolith: #060608;
+    --surface-concrete: rgba(16, 17, 22, 0.82);
+    --border-brutal: rgba(244, 244, 240, 0.14);
   }
 }
 
@@ -19,90 +21,231 @@ html {
 }
 
 body {
-  background-color: #080b11;
-  color: #f1f5f9;
+  background-color: #060608;
+  color: #f4f4f0;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   overflow-x: hidden;
 }
 
-/* Frosted glass utilities matching Aura Glass */
+.font-display {
+  font-family: var(--font-display), var(--font-geist-sans), sans-serif;
+}
+
+.font-serif-editorial {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+/* Brutalist Concrete & Optical Glass Surfaces */
 .glass-panel {
-  background: var(--glass-surface);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  background: var(--surface-concrete);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid var(--border-brutal);
+  box-shadow:
+    0 24px 60px -15px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
 }
 
 .glass-panel-interactive {
-  background: var(--glass-surface);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--surface-concrete);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid var(--border-brutal);
+  box-shadow:
+    0 24px 60px -15px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .glass-panel-interactive:hover {
-  background: rgba(30, 41, 59, 0.7);
-  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(24, 25, 32, 0.92);
+  border-color: var(--reality-accent);
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px -10px rgba(56, 189, 248, 0.25);
+  box-shadow:
+    0 28px 65px -15px rgba(225, 29, 72, 0.22),
+    inset 0 0 0 1px rgba(225, 29, 72, 0.25);
 }
 
-/* Aura Glow Gradients */
-.glow-cyan {
-  box-shadow: 0 0 30px -5px rgba(56, 189, 248, 0.3);
+/* Brutalist Architectural Frame with Corner Registration Ticks */
+.brutal-frame {
+  position: relative;
 }
-
-.glow-emerald {
-  box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.3);
-}
-
-.glow-purple {
-  box-shadow: 0 0 30px -5px rgba(192, 132, 252, 0.3);
-}
-
-/* Background grid pattern */
-.bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
+.brutal-frame::before,
+.brutal-frame::after {
+  content: "";
+  position: absolute;
   width: 8px;
   height: 8px;
+  pointer-events: none;
+  border-color: var(--reality-accent);
+  opacity: 0.75;
+}
+.brutal-frame::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--reality-accent);
+  border-left: 2px solid var(--reality-accent);
+}
+.brutal-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--reality-accent);
+  border-right: 2px solid var(--reality-accent);
+}
+
+/* Interactive [REDACTED] Classification Bars */
+.redacted-span {
+  position: relative;
+  display: inline-block;
+  padding: 0 0.35rem;
+  margin: 0 0.1rem;
+  background: rgba(244, 244, 240, 0.08);
+  border-bottom: 1px dashed rgba(245, 158, 11, 0.5);
+  color: #fbbf24;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.92em;
+  cursor: crosshair;
+  overflow: hidden;
+  vertical-align: baseline;
+}
+
+.redacted-span::after {
+  content: "REDACTED";
+  position: absolute;
+  inset: 0;
+  background: #14151a;
+  color: rgba(244, 244, 240, 0.28);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+.redacted-span:hover::after,
+.declassified-mode .redacted-span::after {
+  transform: translateY(-105%);
+  opacity: 0;
+}
+
+/* Architectural Brutalist Grid Pattern */
+.bg-grid-pattern {
+  background-size: 72px 72px;
+  background-image:
+    linear-gradient(to right, rgba(244, 244, 240, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(244, 244, 240, 0.035) 1px, transparent 1px);
+}
+
+.bg-dot-matrix {
+  background-image: radial-gradient(rgba(244, 244, 240, 0.14) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Brutalist Outlined Display Typography */
+.text-outline {
+  -webkit-text-stroke: 1px rgba(244, 244, 240, 0.18);
+  color: transparent;
+}
+
+.text-outline-crimson {
+  -webkit-text-stroke: 1.5px rgba(225, 29, 72, 0.55);
+  color: transparent;
+}
+
+/* Subtle Chromatic Resonance Glitch on Hover */
+.resonance-hover:hover {
+  text-shadow:
+    -2px 0 rgba(225, 29, 72, 0.7),
+    2px 0 rgba(245, 158, 11, 0.7);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #080b11;
+  background: #060608;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #27272a;
+  border: 1px solid rgba(225, 29, 72, 0.4);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #e11d48;
 }
 
-/* Pulse animation for live status */
+/* Status Beacon Pulse */
 @keyframes status-pulse {
   0%, 100% {
     opacity: 1;
     transform: scale(1);
   }
   50% {
-    opacity: 0.5;
-    transform: scale(1.15);
+    opacity: 0.35;
+    transform: scale(1.25);
   }
 }
 
 .animate-status-pulse {
   animation: status-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Infinite Brutalist Marquee */
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 36s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-status-pulse {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm 12mm;
+  }
+
+  html,
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    color-scheme: light !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
