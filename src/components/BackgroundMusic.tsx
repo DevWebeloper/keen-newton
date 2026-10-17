@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Music, VolumeX } from "lucide-react";
 
 const VIDEO_ID = "5_5eTTFxFTY";
-// Volume follows cursor distance to the button: MIN_VOLUME far away, MAX_VOLUME on top of it.
+// Volume follows cursor distance to the button: MAX_VOLUME far away, MIN_VOLUME on top of it.
 const MIN_VOLUME = 5;
 const MAX_VOLUME = 100;
 const FALLOFF_RADIUS = 600; // px
@@ -77,7 +77,7 @@ export const BackgroundMusic: React.FC = () => {
     p.playVideo();
   }, []);
 
-  // Louder as the cursor approaches the button, quieter as it moves away.
+  // Quieter as the cursor approaches the button, louder as it moves away.
   useEffect(() => {
     const onMove = (e: PointerEvent) => {
       if (e.pointerType === "touch") return;
@@ -89,7 +89,7 @@ export const BackgroundMusic: React.FC = () => {
         e.clientY - (r.top + r.height / 2)
       );
       const t = Math.max(0, 1 - dist / FALLOFF_RADIUS);
-      const vol = Math.round(MIN_VOLUME + (MAX_VOLUME - MIN_VOLUME) * t);
+      const vol = Math.round(MAX_VOLUME - (MAX_VOLUME - MIN_VOLUME) * t);
       if (vol === volumeRef.current) return;
       volumeRef.current = vol;
       if (readyRef.current) playerRef.current?.setVolume(vol);
