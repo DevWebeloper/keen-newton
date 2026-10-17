@@ -192,7 +192,8 @@ export const CyberHUD: React.FC<CyberHUDProps> = ({
       const interactive = target?.closest("a, button, input, textarea, [data-cursor], .redacted-span");
       if (interactive) {
         if (interactive.classList.contains("redacted-span")) {
-          setCursorHover("DECLASSIFY");
+          // Keep the cursor ring small and label-free so it doesn't cover the revealed text.
+          setCursorHover(null);
         } else {
           const customLabel = interactive.getAttribute("data-cursor");
           setCursorHover(customLabel || "INSPECT");
