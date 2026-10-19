@@ -1,121 +1,221 @@
-"use client";
+import CopyEmail from "@/components/CopyEmail";
+import HoursOverlap from "@/components/HoursOverlap";
+import MotionLayer from "@/components/MotionLayer";
+import SiteHeader from "@/components/SiteHeader";
+import { EXPERIENCE, MORE_SITES, OPEN_SOURCE, PERSON, PROJECTS, SKILLS, STATS } from "@/data/site";
 
-import React, { useState, useEffect } from "react";
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { ProjectsSection } from "@/components/ProjectsSection";
-import { OriginStorySection } from "@/components/OriginStorySection";
-import { AuraGlassInteractive } from "@/components/AuraGlassInteractive";
-import { SkillsMatrix } from "@/components/SkillsMatrix";
-import { TimelineSection } from "@/components/TimelineSection";
-import { ContactSection } from "@/components/ContactSection";
-import { Footer } from "@/components/Footer";
-import { InteractiveConsole } from "@/components/InteractiveConsole";
-import { QuantumCanvas3D, ShaderMode } from "@/components/QuantumCanvas3D";
-import { CyberHUD } from "@/components/CyberHUD";
-import { BackgroundMusic } from "@/components/BackgroundMusic";
+function Arrow() {
+  return (
+    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" className="arrow">
+      <path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  );
+}
 
 export default function Home() {
-  const [blurIntensity, setBlurIntensity] = useState<number>(16);
-  const [accentColor, setAccentColor] = useState<string>("#e11d48");
-  const [shaderMode, setShaderMode] = useState<ShaderMode>("aura");
-  const [pulseTrigger, setPulseTrigger] = useState<number>(0);
-  const [fps, setFps] = useState<number>(60);
-  const [soundEnabled, setSoundEnabled] = useState<boolean>(false);
-  const [flashlightBoost, setFlashlightBoost] = useState<boolean>(false);
-  const [declassified, setDeclassified] = useState<boolean>(false);
-  const [terminalOpen, setTerminalOpen] = useState<boolean>(false);
-
-  // Sync optical blur & threshold wavelength to CSS variables
-  useEffect(() => {
-    document.documentElement.style.setProperty("--glass-blur", `${blurIntensity}px`);
-  }, [blurIntensity]);
-
-  useEffect(() => {
-    document.documentElement.style.setProperty("--reality-accent", accentColor);
-  }, [accentColor]);
-
-  const handleTriggerPulse = () => {
-    setPulseTrigger((prev) => prev + 1);
-  };
-
   return (
-    <div
-      className={`min-h-screen bg-[#060608] text-zinc-100 bg-grid-pattern relative overflow-x-hidden ${
-        declassified ? "declassified-mode" : ""
-      }`}
-    >
-      {/* Real-Time Three.js WebGL2 Engine: Inverted Obsidian Pyramid & Brutalist Slabs */}
-      <QuantumCanvas3D
-        shaderMode={shaderMode}
-        accentColor={accentColor}
-        blurIntensity={blurIntensity}
-        onFpsUpdate={setFps}
-        pulseTrigger={pulseTrigger}
-      />
+    <>
+      <a href="#work" className="skip">
+        Skip to work
+      </a>
+      <MotionLayer />
+      <SiteHeader cv={PERSON.cv} />
 
-      {/* Volumetric Flashlight Beam, Brutalist Sector Title Cards & Control Dock */}
-      <CyberHUD
-        fps={fps}
-        shaderMode={shaderMode}
-        setShaderMode={setShaderMode}
-        soundEnabled={soundEnabled}
-        setSoundEnabled={setSoundEnabled}
-        flashlightBoost={flashlightBoost}
-        setFlashlightBoost={setFlashlightBoost}
-        declassified={declassified}
-        setDeclassified={setDeclassified}
-        onTriggerPulse={handleTriggerPulse}
-        onOpenTerminal={() => setTerminalOpen(true)}
-      />
+      <main id="top">
+        <section className="hero container">
+          <p className="status" data-reveal>
+            <span className="status-dot" aria-hidden="true" />
+            Available for remote roles
+          </p>
+          <h1 className="hero-title" data-reveal>
+            Ghaith Alkawadri
+          </h1>
+          <p className="hero-headline" data-reveal>
+            {PERSON.headline}
+          </p>
+          <p className="hero-intro" data-reveal>
+            {PERSON.intro}
+          </p>
+          <div className="hero-actions" data-reveal>
+            <a className="btn" href={`mailto:${PERSON.email}`}>
+              Get in touch
+            </a>
+            <a className="btn btn-ghost" href="#work">
+              See my work
+            </a>
+          </div>
 
-      {/* Brutalist Directorate Command Navigation */}
-      <Navbar
-        blurIntensity={blurIntensity}
-        setBlurIntensity={setBlurIntensity}
-        accentColor={accentColor}
-        setAccentColor={setAccentColor}
-        declassified={declassified}
-        setDeclassified={setDeclassified}
-        onOpenTerminal={() => setTerminalOpen(true)}
-      />
+          <dl className="stats" data-reveal>
+            {STATS.map((s) => (
+              <div key={s.label}>
+                <dt>{s.label}</dt>
+                <dd>{s.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
 
-      {/* Sector Content Stream */}
-      <main className="relative z-10 space-y-6">
-        <Hero
-          onOpenTerminal={() => setTerminalOpen(true)}
-          shaderMode={shaderMode}
-          setShaderMode={setShaderMode}
-          onTriggerPulse={handleTriggerPulse}
-          declassified={declassified}
-          setDeclassified={setDeclassified}
-        />
-        <ProjectsSection />
-        <OriginStorySection />
-        <AuraGlassInteractive
-          blurIntensity={blurIntensity}
-          setBlurIntensity={setBlurIntensity}
-          accentColor={accentColor}
-          setAccentColor={setAccentColor}
-        />
-        <SkillsMatrix />
-        <TimelineSection />
-        <ContactSection />
+        <section id="work" className="section container" aria-labelledby="work-title">
+          <div className="section-head" data-reveal>
+            <h2 id="work-title">Selected work</h2>
+            <p>Sites I developed for clients. Design by the clients and their agencies; the code is mine.</p>
+          </div>
+
+          <div className="projects">
+            {PROJECTS.map((p) => (
+              <article key={p.id} className="project" data-reveal>
+                <div className="project-text">
+                  <p className="project-meta">
+                    {p.role}
+                    {p.years ? ` · ${p.years}` : ""}
+                  </p>
+                  <h3>{p.name}</h3>
+                  <p className="project-client">{p.client}</p>
+                  <p className="project-summary">{p.summary}</p>
+                  <ul className="project-built">
+                    {p.built.map((b) => (
+                      <li key={b}>{b}</li>
+                    ))}
+                  </ul>
+                  <ul className="tags" aria-label="Stack">
+                    {p.stack.map((t) => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                  <a className="text-link" href={p.url} target="_blank" rel="noreferrer">
+                    {p.domain} <Arrow />
+                  </a>
+                </div>
+
+                <a className="browser" href={p.url} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden="true">
+                  <span className="browser-bar">
+                    <span className="browser-dots">
+                      <i />
+                      <i />
+                      <i />
+                    </span>
+                    <span className="browser-url">{p.domain}</span>
+                  </span>
+                  <span className="browser-view">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.image} alt="" width={960} height={p.imageHeight} loading="lazy" />
+                  </span>
+                </a>
+              </article>
+            ))}
+          </div>
+
+          <div className="more" data-reveal>
+            <h3>More client sites</h3>
+            <ul>
+              {MORE_SITES.map((s) => (
+                <li key={s.name}>
+                  <a href={s.url} target="_blank" rel="noreferrer">
+                    <span className="more-name">{s.name}</span>
+                    <span className="more-what">{s.what}</span>
+                    <span className="more-domain">
+                      {s.domain} <Arrow />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section id="open-source" className="section container" aria-labelledby="oss-title">
+          <div className="section-head" data-reveal>
+            <h2 id="oss-title">Open source</h2>
+            <p>Linux desktop software I write and maintain in my own time.</p>
+          </div>
+          <div className="oss-grid">
+            {OPEN_SOURCE.map((o) => (
+              <a key={o.name} className="oss-card" href={o.url} target="_blank" rel="noreferrer" data-reveal>
+                <span className="oss-top">
+                  <h3>{o.name}</h3>
+                  {o.stars ? <span className="oss-stars">★ {o.stars}</span> : <Arrow />}
+                </span>
+                <p>{o.summary}</p>
+                <ul className="tags">
+                  {o.stack.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section id="experience" className="section container" aria-labelledby="exp-title">
+          <div className="section-head" data-reveal>
+            <h2 id="exp-title">Experience</h2>
+            <a className="text-link" href={PERSON.cv} download>
+              Full CV (PDF) <Arrow />
+            </a>
+          </div>
+          <ol className="timeline">
+            {EXPERIENCE.map((e) => (
+              <li key={e.role} data-reveal>
+                <p className="timeline-years">{e.years}</p>
+                <div>
+                  <h3>{e.role}</h3>
+                  <p className="timeline-org">{e.org}</p>
+                  <ul>
+                    {e.points.map((pt) => (
+                      <li key={pt}>{pt}</li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <div className="skills" data-reveal>
+            {SKILLS.map((s) => (
+              <div key={s.group}>
+                <h3>{s.group}</h3>
+                <ul className="tags">
+                  {s.items.map((i) => (
+                    <li key={i}>{i}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="section container contact" aria-labelledby="contact-title">
+          <div className="contact-main" data-reveal>
+            <h2 id="contact-title">Let&apos;s work together</h2>
+            <p>
+              I&apos;m looking for a remote role on a product or agency team, owning front-end and WordPress work end to
+              end. The quickest way to reach me is email.
+            </p>
+            <a className="contact-email" href={`mailto:${PERSON.email}`}>
+              {PERSON.email}
+            </a>
+            <div className="hero-actions">
+              <a className="btn" href={`mailto:${PERSON.email}`}>
+                Send an email
+              </a>
+              <CopyEmail email={PERSON.email} />
+              <a className="btn btn-ghost" href={PERSON.github} target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div className="hours-card" data-reveal>
+            <h3>Working hours</h3>
+            <HoursOverlap />
+          </div>
+        </section>
       </main>
 
-      {/* Brutalist Marquee Footer */}
-      <div className="relative z-10">
-        <Footer />
-      </div>
-
-      {/* Background music (YouTube embed) */}
-      <BackgroundMusic />
-
-      {/* Mainframe Console Modal (⌘K) */}
-      <InteractiveConsole
-        isOpen={terminalOpen}
-        onClose={() => setTerminalOpen(false)}
-      />
-    </div>
+      <footer className="footer container">
+        <p>© 2026 {PERSON.name}</p>
+        <p>{PERSON.base}</p>
+      </footer>
+    </>
   );
 }

@@ -2,14 +2,17 @@ import type { NextConfig } from "next";
 
 // GitHub Pages serves the site from /<repo>; the workflow sets GITHUB_PAGES=true.
 const isPages = process.env.GITHUB_PAGES === "true";
+const basePath = isPages ? "/keen-newton" : "";
 
 const nextConfig: NextConfig = {
+  // Plain <img>/<a> paths to /public files need the prefix added by hand.
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
   /* config options here */
   // PPR-based features can't be combined with static export.
   ...(isPages
     ? {
         output: "export" as const,
-        basePath: "/keen-newton",
+        basePath,
         images: { unoptimized: true },
         trailingSlash: true,
       }
