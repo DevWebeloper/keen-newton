@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ghaith Alkawadri, software developer",
     description,
-    url: "https://devwebeloper.github.io/keen-newton/",
+    url: "https://devwebeloper.github.io/portfolio/",
     siteName: "Ghaith Alkawadri",
     locale: "en_US",
     type: "website",

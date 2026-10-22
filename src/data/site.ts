@@ -1,3 +1,5 @@
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const PERSON = {
   name: "Ghaith Alkawadri",
   role: "Software developer",
@@ -8,7 +10,7 @@ export const PERSON = {
   email: "gheith.sy@gmail.com",
   github: "https://github.com/DevWebeloper",
   githubLabel: "github.com/DevWebeloper",
-  cv: "/Ghaith-Alkawadri-CV.pdf",
+  cv: `${BASE}/Ghaith-Alkawadri-CV.pdf`,
   timeZone: "Africa/Cairo",
   // Usual working day in Cairo time, used by the hours tool.
   dayStart: 9,
@@ -42,7 +44,7 @@ export const PROJECTS: Project[] = [
     role: "Web developer",
     domain: "hrf.org",
     url: "https://hrf.org",
-    image: "/work/hrf.webp",
+    image: `${BASE}/work/hrf.webp`,
     imageHeight: 1035,
     summary:
       "Worked on both WordPress sites in a distributed team: theme templates, custom features and the Forum's event pages.",
@@ -54,7 +56,7 @@ export const PROJECTS: Project[] = [
     role: "Freelance, front-end",
     domain: "gt-ai.io",
     url: "https://gt-ai.io",
-    image: "/work/gtai.webp",
+    image: `${BASE}/work/gtai.webp`,
     imageHeight: 1200,
     summary: "Built the Angular front-end for an AI voice platform on the ElevenLabs API.",
     stack: ["Angular", "TypeScript", "REST APIs"],
