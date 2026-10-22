@@ -8,16 +8,16 @@ const geist = Geist({
 });
 
 const description =
-  "Ghaith Alkawadri is a remote web developer in Egypt who builds custom WordPress themes and front-ends for clients in Geneva, Paris, Oslo and New York.";
+  "Ghaith Alkawadri is a remote software developer in Egypt: web front-ends, WordPress sites and open-source Linux software in Python and GTK4.";
 
 export const metadata: Metadata = {
-  title: "Ghaith Alkawadri, web developer",
+  title: "Ghaith Alkawadri, software developer",
   description,
   authors: [{ name: "Ghaith Alkawadri", url: "https://github.com/DevWebeloper" }],
   openGraph: {
-    title: "Ghaith Alkawadri, web developer",
+    title: "Ghaith Alkawadri, software developer",
     description,
-    url: "https://devwebeloper.com",
+    url: "https://devwebeloper.github.io/keen-newton/",
     siteName: "Ghaith Alkawadri",
     locale: "en_US",
     type: "website",

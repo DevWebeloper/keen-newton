@@ -2,7 +2,7 @@ import CopyEmail from "@/components/CopyEmail";
 import HoursOverlap from "@/components/HoursOverlap";
 import MotionLayer from "@/components/MotionLayer";
 import SiteHeader from "@/components/SiteHeader";
-import { EXPERIENCE, MORE_SITES, OPEN_SOURCE, PERSON, PROJECTS, SKILLS, STATS } from "@/data/site";
+import { EXPERIENCE, OPEN_SOURCE, OTHER_CLIENTS, PERSON, PROJECTS, SKILLS, STATS } from "@/data/site";
 
 function Arrow() {
   return (
@@ -15,7 +15,7 @@ function Arrow() {
 export default function Home() {
   return (
     <>
-      <a href="#work" className="skip">
+      <a href="#open-source" className="skip">
         Skip to work
       </a>
       <MotionLayer />
@@ -40,7 +40,7 @@ export default function Home() {
             <a className="btn" href={`mailto:${PERSON.email}`}>
               Get in touch
             </a>
-            <a className="btn btn-ghost" href="#work">
+            <a className="btn btn-ghost" href="#open-source">
               See my work
             </a>
           </div>
@@ -55,10 +55,33 @@ export default function Home() {
           </dl>
         </section>
 
+        <section id="open-source" className="section container" aria-labelledby="oss-title">
+          <div className="section-head" data-reveal>
+            <h2 id="oss-title">Open source</h2>
+            <p>Linux desktop software I write and maintain in my own time.</p>
+          </div>
+          <div className="oss-grid">
+            {OPEN_SOURCE.map((o) => (
+              <a key={o.name} className="oss-card" href={o.url} target="_blank" rel="noreferrer" data-reveal>
+                <span className="oss-top">
+                  <h3>{o.name}</h3>
+                  {o.stars ? <span className="oss-stars">★ {o.stars}</span> : <Arrow />}
+                </span>
+                <p>{o.summary}</p>
+                <ul className="tags">
+                  {o.stack.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+              </a>
+            ))}
+          </div>
+        </section>
+
         <section id="work" className="section container" aria-labelledby="work-title">
           <div className="section-head" data-reveal>
-            <h2 id="work-title">Selected work</h2>
-            <p>Sites I developed for clients. Design by the clients and their agencies; the code is mine.</p>
+            <h2 id="work-title">Client work</h2>
+            <p>Some of the client projects I&apos;ve worked on as a developer. Design by the clients and their agencies.</p>
           </div>
 
           <div className="projects">
@@ -70,13 +93,7 @@ export default function Home() {
                     {p.years ? ` · ${p.years}` : ""}
                   </p>
                   <h3>{p.name}</h3>
-                  <p className="project-client">{p.client}</p>
                   <p className="project-summary">{p.summary}</p>
-                  <ul className="project-built">
-                    {p.built.map((b) => (
-                      <li key={b}>{b}</li>
-                    ))}
-                  </ul>
                   <ul className="tags" aria-label="Stack">
                     {p.stack.map((t) => (
                       <li key={t}>{t}</li>
@@ -105,45 +122,9 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="more" data-reveal>
-            <h3>More client sites</h3>
-            <ul>
-              {MORE_SITES.map((s) => (
-                <li key={s.name}>
-                  <a href={s.url} target="_blank" rel="noreferrer">
-                    <span className="more-name">{s.name}</span>
-                    <span className="more-what">{s.what}</span>
-                    <span className="more-domain">
-                      {s.domain} <Arrow />
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section id="open-source" className="section container" aria-labelledby="oss-title">
-          <div className="section-head" data-reveal>
-            <h2 id="oss-title">Open source</h2>
-            <p>Linux desktop software I write and maintain in my own time.</p>
-          </div>
-          <div className="oss-grid">
-            {OPEN_SOURCE.map((o) => (
-              <a key={o.name} className="oss-card" href={o.url} target="_blank" rel="noreferrer" data-reveal>
-                <span className="oss-top">
-                  <h3>{o.name}</h3>
-                  {o.stars ? <span className="oss-stars">★ {o.stars}</span> : <Arrow />}
-                </span>
-                <p>{o.summary}</p>
-                <ul className="tags">
-                  {o.stack.map((t) => (
-                    <li key={t}>{t}</li>
-                  ))}
-                </ul>
-              </a>
-            ))}
-          </div>
+          <p className="more-clients" data-reveal>
+            WordPress sites for other clients, including {OTHER_CLIENTS.join(", ")}.
+          </p>
         </section>
 
         <section id="experience" className="section container" aria-labelledby="exp-title">
@@ -188,8 +169,8 @@ export default function Home() {
           <div className="contact-main" data-reveal>
             <h2 id="contact-title">Let&apos;s work together</h2>
             <p>
-              I&apos;m looking for a remote role on a product or agency team, owning front-end and WordPress work end to
-              end. The quickest way to reach me is email.
+              I&apos;m looking for a remote developer role, on the web or on Linux and Python tooling. The quickest way
+              to reach me is email.
             </p>
             <a className="contact-email" href={`mailto:${PERSON.email}`}>
               {PERSON.email}

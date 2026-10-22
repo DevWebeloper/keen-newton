@@ -340,32 +340,8 @@ a:hover .arrow {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   letter-spacing: -0.03em;
 }
-.project-client {
-  margin-top: 6px;
-  color: var(--muted);
-}
 .project-summary {
-  margin-top: 18px;
-}
-.project-built {
-  margin: 14px 0 22px;
-  padding: 0;
-  list-style: none;
-  color: var(--muted);
-}
-.project-built li {
-  position: relative;
-  padding-left: 20px;
-  margin-top: 6px;
-}
-.project-built li::before {
-  content: "";
-  position: absolute;
-  left: 2px;
-  top: 0.7em;
-  width: 8px;
-  height: 2px;
-  background: var(--accent);
+  margin: 18px 0 22px;
 }
 .project .text-link {
   margin-top: 26px;
@@ -431,50 +407,11 @@ a:hover .arrow {
   object-position: 50% 100%;
 }
 
-.more {
+.more-clients {
   margin-top: 40px;
-  padding-top: 48px;
+  padding-top: 32px;
   border-top: 1px solid var(--line);
-}
-.more h3 {
-  font-size: 1.25rem;
-  margin-bottom: 16px;
-}
-.more ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.more a {
-  display: grid;
-  grid-template-columns: 220px 1fr auto;
-  gap: 24px;
-  align-items: baseline;
-  padding: 18px 16px;
-  margin: 0 -16px;
-  border-radius: 10px;
-  transition: background-color 0.2s ease;
-}
-.more li + li a {
-  border-top: 1px solid var(--line);
-  border-radius: 0;
-}
-.more a:hover {
-  background: var(--surface);
-  border-radius: 10px;
-}
-.more-name {
-  font-weight: 600;
-}
-.more-what {
   color: var(--muted);
-}
-.more-domain {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--muted);
-  font-size: 0.9rem;
 }
 
 /* ---------- Open source ---------- */
@@ -839,10 +776,6 @@ a:hover .arrow {
   .oss-grid,
   .skills {
     grid-template-columns: 1fr;
-  }
-  .more a {
-    grid-template-columns: 1fr;
-    gap: 4px;
   }
   .timeline > li {
     grid-template-columns: 1fr;
