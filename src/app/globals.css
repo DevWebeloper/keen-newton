@@ -522,10 +522,6 @@ a:hover .arrow {
 /* ---------- Contact ---------- */
 
 .contact {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: clamp(40px, 6vw, 80px);
-  align-items: start;
   padding-bottom: var(--section);
 }
 .contact-main h2 {
@@ -551,57 +547,6 @@ a:hover .arrow {
   color: var(--accent);
 }
 
-.hours-card {
-  padding: 28px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-.hours-card > h3 {
-  font-size: 1.25rem;
-}
-.schedule {
-  margin-top: 16px;
-}
-.schedule-title {
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-.schedule-range {
-  margin: 4px 0 18px;
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  font-variant-numeric: tabular-nums;
-}
-.schedule-bar {
-  display: grid;
-  grid-template-columns: repeat(24, 1fr);
-  gap: 3px;
-  height: 32px;
-}
-.schedule-bar span {
-  border-radius: 3px;
-  background: var(--surface-2);
-  transition: background-color 0.35s ease;
-}
-.schedule-bar span[data-mine="true"] {
-  background: var(--accent);
-}
-.schedule-axis {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 6px;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-.schedule-verdict {
-  margin-top: 16px;
-  font-size: 0.95rem;
-}
-.tabular {
-  font-variant-numeric: tabular-nums;
-}
 
 /* ---------- Footer ---------- */
 
@@ -667,8 +612,7 @@ a:hover .arrow {
 /* ---------- Tablet and phone ---------- */
 
 @media (max-width: 960px) {
-  .project,
-  .contact {
+  .project {
     grid-template-columns: 1fr;
   }
   .project:nth-child(even) .project-text {

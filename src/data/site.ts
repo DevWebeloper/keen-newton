@@ -11,10 +11,6 @@ export const PERSON = {
   github: "https://github.com/DevWebeloper",
   githubLabel: "github.com/DevWebeloper",
   cv: `${BASE}/Ghaith-Alkawadri-CV.pdf`,
-  timeZone: "Africa/Cairo",
-  // Usual working day in Cairo time, used by the hours tool.
-  dayStart: 9,
-  dayEnd: 18,
 };
 
 export const STATS = [
