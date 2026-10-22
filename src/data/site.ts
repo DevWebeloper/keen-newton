@@ -53,7 +53,7 @@ export const PROJECTS: Project[] = [
   {
     id: "gtai",
     name: "GT-AI",
-    role: "Freelance, front-end",
+    role: "Front-end developer at XonBoard",
     domain: "gt-ai.io",
     url: "https://gt-ai.io",
     image: `${BASE}/work/gtai.webp`,
@@ -61,9 +61,32 @@ export const PROJECTS: Project[] = [
     summary: "Built the Angular front-end for an AI voice platform on the ElevenLabs API.",
     stack: ["Angular", "TypeScript", "REST APIs"],
   },
+  {
+    id: "crcdc",
+    name: "CRCDC Pays de la Loire",
+    role: "Freelance",
+    domain: "depistagecancers.fr",
+    url: "https://depistagecancers.fr",
+    image: `${BASE}/work/crcdc.webp`,
+    imageHeight: 840,
+    summary:
+      "WordPress site for a French regional cancer-screening centre, serving both the public and health professionals.",
+    stack: ["WordPress", "PHP", "JavaScript", "CSS"],
+  },
+  {
+    id: "cider",
+    name: "Cider",
+    role: "Freelance",
+    domain: "cider.fr",
+    url: "https://www.cider.fr",
+    image: `${BASE}/work/cider.webp`,
+    imageHeight: 1200,
+    summary: "WordPress site for a Paris office-furniture company, with image-heavy project and product pages.",
+    stack: ["WordPress", "PHP", "CSS"],
+  },
 ];
 
-export const OTHER_CLIENTS = ["JAR Capital (Geneva)", "CRCDC Pays de la Loire (France)", "Cider (Paris)"];
+export const OTHER_CLIENTS = ["JAR Capital (Geneva)"];
 
 export const OPEN_SOURCE = [
   {
@@ -97,8 +120,8 @@ export const EXPERIENCE = [
     role: "Freelance web developer",
     org: "Remote",
     points: [
-      "Angular front-end for the GT-AI voice platform",
       "WordPress sites built and customised with theme code and visual editors",
+      "Clients include CRCDC Pays de la Loire, Cider and JAR Capital",
     ],
   },
   {
@@ -108,6 +131,7 @@ export const EXPERIENCE = [
     points: [
       "Human Rights Foundation and Oslo Freedom Forum sites: theme templates, custom features and front-end code",
       "Event pages for the Forum: speakers, schedule filtering, livestreams",
+      "Angular front-end for the GT-AI voice platform",
       "Websites for other XonBoard clients",
     ],
   },

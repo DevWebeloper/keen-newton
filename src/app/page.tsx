@@ -130,7 +130,7 @@ export default function Home() {
           </div>
 
           <p className="more-clients" data-reveal>
-            WordPress sites for other clients, including {OTHER_CLIENTS.join(", ")}.
+            Also WordPress work for other clients, including {OTHER_CLIENTS.join(", ")}.
           </p>
         </section>
 
