@@ -163,6 +163,6 @@ export const SKILLS = [
   },
   {
     group: "Languages",
-    items: ["Arabic (native)", "English (professional)"],
+    items: ["Arabic (native)", "English (fluent)"],
   },
 ];
