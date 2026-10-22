@@ -5,7 +5,7 @@ export const PERSON = {
   role: "Software developer",
   headline: "Developer building for the web and the Linux desktop.",
   intro:
-    "8+ years of remote work for clients in the US, Switzerland and France. I build Angular front-ends and WordPress sites, and I write and maintain open-source Linux software in Python and GTK4.",
+    "8+ years of remote web work, at XonBoard and as a freelancer, for clients in the US, Switzerland and France. I build Angular front-ends and WordPress sites, and I write and maintain open-source Linux software in Python and GTK4.",
   base: "Remote, based in Egypt",
   email: "gheith.sy@gmail.com",
   github: "https://github.com/DevWebeloper",
@@ -18,10 +18,10 @@ export const PERSON = {
 };
 
 export const STATS = [
-  { value: "8+", label: "years of remote client work" },
-  { value: "3", label: "countries: US, Switzerland, France" },
+  { value: "8+", label: "years of remote web work" },
   { value: "1M+", label: "downloads of my Android ROMs" },
   { value: "120+", label: "GitHub stars on Aura Glass" },
+  { value: "15k+", label: "members in the ROM community I ran" },
 ];
 
 export interface Project {
@@ -41,13 +41,13 @@ export const PROJECTS: Project[] = [
   {
     id: "hrf",
     name: "Human Rights Foundation & Oslo Freedom Forum",
-    role: "Web developer",
+    role: "Web developer at XonBoard",
     domain: "hrf.org",
     url: "https://hrf.org",
     image: `${BASE}/work/hrf.webp`,
     imageHeight: 1035,
     summary:
-      "Worked on both WordPress sites in a distributed team: theme templates, custom features and the Forum's event pages.",
+      "Worked on both WordPress sites as part of XonBoard's remote team: theme templates, custom features and the Forum's event pages.",
     stack: ["WordPress", "PHP", "JavaScript", "CSS"],
   },
   {
