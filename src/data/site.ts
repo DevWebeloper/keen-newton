@@ -19,7 +19,7 @@ export const PERSON = {
 
 export const STATS = [
   { value: "8+", label: "years of remote web work" },
-  { value: "1M+", label: "downloads of my Android ROMs" },
+  { value: "200k+", label: "downloads of my Android ROMs" },
   { value: "120+", label: "GitHub stars on Aura Glass" },
   { value: "15k+", label: "members in the ROM community I ran" },
 ];
@@ -115,7 +115,7 @@ export const EXPERIENCE = [
     role: "Android ROM developer",
     org: "NovaOS, XDA Developers",
     points: [
-      "Ported Samsung's Note FE firmware to 12 budget devices, 1M+ downloads",
+      "Ported Samsung's Note FE firmware to 12 budget devices, 200k+ downloads",
       "Patched device trees, kernels and vendor libraries to fix camera, audio and graphics",
       "Ported a GPU library from another device so UI blur worked on every supported device",
       "Started and ran a 15k+ member Telegram community",
