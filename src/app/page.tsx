@@ -65,7 +65,14 @@ export default function Home() {
               <a key={o.name} className="oss-card" href={o.url} target="_blank" rel="noreferrer" data-reveal>
                 <span className="oss-top">
                   <h3>{o.name}</h3>
-                  {o.stars ? <span className="oss-stars">★ {o.stars}</span> : <Arrow />}
+                  {o.stars ? (
+                    <span className="oss-stars">
+                      ★ {o.stars}
+                      {o.downloads ? ` · ${o.downloads} downloads` : ""}
+                    </span>
+                  ) : (
+                    <Arrow />
+                  )}
                 </span>
                 <p>{o.summary}</p>
                 <ul className="tags">

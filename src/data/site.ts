@@ -69,6 +69,7 @@ export const OPEN_SOURCE = [
   {
     name: "Aura Glass",
     stars: "120+",
+    downloads: "~2k",
     summary:
       "Frosted-glass theme for GNOME Shell 48–51. Interactive installer, a settings app, and an adaptive mode that turns blur off on battery or under heavy GPU load.",
     stack: ["GTK4", "libadwaita", "CSS", "Bash"],
