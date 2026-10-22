@@ -1,7 +1,7 @@
 import CopyEmail from "@/components/CopyEmail";
-import HoursOverlap from "@/components/HoursOverlap";
 import MotionLayer from "@/components/MotionLayer";
 import SiteHeader from "@/components/SiteHeader";
+import WorkingHours from "@/components/WorkingHours";
 import { EXPERIENCE, OPEN_SOURCE, OTHER_CLIENTS, PERSON, PROJECTS, SKILLS, STATS } from "@/data/site";
 
 function Arrow() {
@@ -195,7 +195,7 @@ export default function Home() {
 
           <div className="hours-card" data-reveal>
             <h3>Working hours</h3>
-            <HoursOverlap />
+            <WorkingHours />
           </div>
         </section>
       </main>

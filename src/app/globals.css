@@ -560,42 +560,8 @@ a:hover .arrow {
 .hours-card > h3 {
   font-size: 1.25rem;
 }
-.hours-input {
-  margin-top: 12px;
-}
-.hours-sentence {
-  font-size: 1.125rem;
-  line-height: 2;
-}
-.hours-sentence select {
-  appearance: none;
-  font: inherit;
-  font-weight: 600;
-  color: var(--text);
-  background: var(--surface-2);
-  border: 1px solid var(--line-strong);
-  border-radius: 8px;
-  padding: 2px 10px;
-  cursor: pointer;
-  transition: border-color 0.2s ease;
-}
-.hours-sentence select:hover,
-.hours-sentence select:focus-visible {
-  border-color: var(--accent);
-}
-.hours-sentence option {
-  background: var(--surface);
-  color: var(--text);
-}
-.hours-note {
-  margin-top: 6px;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-.hours-output {
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line);
+.schedule {
+  margin-top: 16px;
 }
 .schedule-title {
   font-size: 0.9rem;
@@ -620,12 +586,6 @@ a:hover .arrow {
   transition: background-color 0.35s ease;
 }
 .schedule-bar span[data-mine="true"] {
-  background: #3a3a41;
-}
-.schedule-bar span[data-team="true"] {
-  background: #7a3a26;
-}
-.schedule-bar span[data-team="true"][data-mine="true"] {
   background: var(--accent);
 }
 .schedule-axis {
@@ -634,36 +594,6 @@ a:hover .arrow {
   margin-top: 6px;
   font-size: 0.8rem;
   color: var(--muted);
-}
-.schedule-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 18px;
-  list-style: none;
-  margin: 16px 0 0;
-  padding: 0;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-.schedule-legend li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.schedule-legend li::before {
-  content: "";
-  width: 12px;
-  height: 12px;
-  border-radius: 3px;
-}
-.schedule-legend li[data-key="team"]::before {
-  background: #7a3a26;
-}
-.schedule-legend li[data-key="mine"]::before {
-  background: #3a3a41;
-}
-.schedule-legend li[data-key="both"]::before {
-  background: var(--accent);
 }
 .schedule-verdict {
   margin-top: 16px;
